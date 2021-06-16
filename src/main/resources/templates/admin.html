@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en-IE" xmlns:th="www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,9 +33,9 @@
 					<td th:text="${u.firstName}">First Name</td>
 					<td th:text="${u.lastName}">Last Name</td>
 					<td th:text="${u.email}">Email</td>
-					<td th:text="${u.hotelExp}">Hotel</td>
-					<td th:text="${u.foodBeverageExp}">F & B</td>
-					<td th:text="${u.travelExp}">Travel</td>
+					<td th:text="${#numbers.formatCurrency(u.hotelExp)}">Hotel</td>
+					<td th:text="${#numbers.formatCurrency(u.foodBeverageExp)}">F & B</td>
+					<td th:text="${#numbers.formatCurrency(u.travelExp)}">Travel</td>
 					<td><a th:if="${u.hotelRecId}" th:href="@{'/image/'+${u.hotelRecId}}" class="btn btn-sm btn-warning">View</a></td>
 					<td><a th:if="${u.foodBeverageRecId}" th:href="@{'/image/'+${u.foodBeverageRecId}}" class="btn btn-sm btn-warning">View</a></td>
 					<td><a th:if="${u.travelRecId}" th:href="@{'/image/'+${u.travelRecId}}" class="btn btn-sm btn-warning">View</a></td>
